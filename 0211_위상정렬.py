@@ -1,7 +1,5 @@
 from collections import deque
 
-import q as q
-
 v, e = map(int, input().split())
 indegree = [0] * (v + 1)  # 진입차수
 graph = [[] for i in range(v + 1)]
@@ -21,7 +19,6 @@ def topology_sort():
         if indegree[i] == 0:
             q.append(i)
 
-
     while q:
         now = q.popleft()
         result.append(now)
@@ -31,7 +28,7 @@ def topology_sort():
                 q.append(i)
 
     for i in result:
-        print(i, end = ' ')
+        print(i, end=' ')
+
 
 topology_sort()
-
